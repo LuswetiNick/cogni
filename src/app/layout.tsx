@@ -27,7 +27,7 @@ export default function RootLayout({
         <body className={`${ibmPlexSans.variable} antialiased`}>
           <ThemeProvider attribute="class" defaultTheme="system" enableSystem>
             {children}
-            <Toaster position="bottom-right" />
+            <Toaster position="top-right" />
           </ThemeProvider>
         </body>
       </html>

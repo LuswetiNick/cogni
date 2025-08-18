@@ -41,7 +41,7 @@ export function SiteHeader() {
           >
             <Search />
             Search
-            <Kbd className="ml-auto text-[10px]">ctrl</Kbd>+
+            <Kbd className="ml-auto ">⌘</Kbd>
             <Kbd className="text-[10px]">K</Kbd>
           </Button>
           <div className="ml-auto flex items-center gap-2">

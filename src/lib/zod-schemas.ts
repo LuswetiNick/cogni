@@ -20,3 +20,12 @@ export const loginSchema = z.object({
     message: 'Password must be at least 8 characters long',
   }),
 });
+
+export const agentSchema = z.object({
+  name: z.string().min(1, {
+    message: 'Name is required',
+  }),
+  instructions: z.string().min(1, {
+    message: 'Instructions are required',
+  }),
+});
