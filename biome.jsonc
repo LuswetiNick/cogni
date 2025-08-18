@@ -7,10 +7,14 @@
         "noUnknownAtRule": "off"
       },
       "suspicious": {
-        "useAwait": "off"
+        "useAwait": "off",
+        "noConsole": "off"
       },
       "style": {
         "useBlockStatements": "off"
+      },
+      "complexity": {
+        "noVoid": "off"
       }
     }
   }
