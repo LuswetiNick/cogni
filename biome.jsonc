@@ -5,6 +5,12 @@
     "rules": {
       "nursery": {
         "noUnknownAtRule": "off"
+      },
+      "suspicious": {
+        "useAwait": "off"
+      },
+      "style": {
+        "useBlockStatements": "off"
       }
     }
   }
