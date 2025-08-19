@@ -1,18 +1,18 @@
-import * as React from "react"
+import type * as React from 'react';
 
-import { cn } from "@/lib/utils"
+import { cn } from '@/lib/utils';
 
-function Kbd({ className, ...props }: React.ComponentProps<"div">) {
-	return (
-		<div
-			data-slot="kbd"
-			className={cn(
-				"bg-background flex h-5 w-5 items-center justify-center rounded-sm border text-center text-xs font-medium tracking-tight shadow-sm",
-				className
-			)}
-			{...props}
-		/>
-	)
+function Kbd({ className, ...props }: React.ComponentProps<'div'>) {
+  return (
+    <div
+      className={cn(
+        'flex h-5 w-5 items-center justify-center rounded-sm border bg-background text-center font-medium text-xs tracking-tight shadow-sm',
+        className
+      )}
+      data-slot="kbd"
+      {...props}
+    />
+  );
 }
 
-export { Kbd }
+export { Kbd };

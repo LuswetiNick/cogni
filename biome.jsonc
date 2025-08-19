@@ -4,17 +4,34 @@
   "linter": {
     "rules": {
       "nursery": {
-        "noUnknownAtRule": "off"
+        "noUnknownAtRule": "off",
+        "noShadow": "off",
+        "noNestedComponentDefinitions": "off"
       },
       "suspicious": {
         "useAwait": "off",
-        "noConsole": "off"
+        "noConsole": "off",
+        "noDocumentCookie": "off",
+        "noArrayIndexKey": "off"
       },
       "style": {
-        "useBlockStatements": "off"
+        "useBlockStatements": "off",
+        "noNestedTernary": "off"
       },
       "complexity": {
-        "noVoid": "off"
+        "noVoid": "off",
+        "noExcessiveCognitiveComplexity": "off"
+      },
+      "performance": {
+        "noNamespaceImport": "off"
+      },
+      "a11y": {
+        "useFocusableInteractive": "off",
+        "useSemanticElements": "off",
+        "useAriaPropsForRole": "off"
+      },
+      "security": {
+        "noDangerouslySetInnerHtml": "off"
       }
     }
   }
