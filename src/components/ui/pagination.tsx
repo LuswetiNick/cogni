@@ -99,14 +99,23 @@ function PaginationNext({
 
 function PaginationEllipsis({
   className,
+  onClick,
+  onKeyDown,
+  tabIndex,
   ...props
 }: React.ComponentProps<'span'>) {
+  // Ensure element remains non-interactive
+  const nonInteractiveProps = { ...props };
+  delete nonInteractiveProps.onClick;
+  delete nonInteractiveProps.onKeyDown;
+  delete nonInteractiveProps.tabIndex;
+
   return (
     <span
-      aria-hidden
+      aria-hidden="true"
       className={cn('flex size-9 items-center justify-center', className)}
       data-slot="pagination-ellipsis"
-      {...props}
+      {...nonInteractiveProps}
     >
       <MoreHorizontalIcon className="size-4" />
       <span className="sr-only">More pages</span>

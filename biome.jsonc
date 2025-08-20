@@ -23,7 +23,8 @@
         "noExcessiveCognitiveComplexity": "off"
       },
       "performance": {
-        "noNamespaceImport": "off"
+        "noNamespaceImport": "off",
+        "noDelete": "off"
       },
       "a11y": {
         "useFocusableInteractive": "off",
