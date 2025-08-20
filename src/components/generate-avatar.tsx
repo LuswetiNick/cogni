@@ -1,5 +1,5 @@
-/** biome-ignore-all lint/suspicious/noImplicitAnyLet: <explanation> */
-/** biome-ignore-all lint/suspicious/noEvolvingTypes: <explanation> */
+/** biome-ignore-all lint/suspicious/noImplicitAnyLet: The 'avatar' variable is initialized in a conditional block, so its type is determined at runtime. */
+/** biome-ignore-all lint/suspicious/noEvolvingTypes: The 'avatar' variable is initialized in a conditional block, so its type is determined at runtime. */
 import { bottts, initials } from '@dicebear/collection';
 import { createAvatar } from '@dicebear/core';
 import { AvatarFallback } from '@radix-ui/react-avatar';
