@@ -1,7 +1,7 @@
 import { Public_Sans } from "next/font/google";
 
 import "@workspace/ui/globals.css";
-import { Providers } from "@/components/providers";
+import { ConvexClientProvider } from "@/components/convex-client-provider";
 
 const fontSans = Public_Sans({
   subsets: ["latin"],
@@ -16,7 +16,7 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${fontSans.variable} font-sans antialiased `}>
-        <Providers>{children}</Providers>
+        <ConvexClientProvider>{children}</ConvexClientProvider>
       </body>
     </html>
   );
