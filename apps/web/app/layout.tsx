@@ -2,6 +2,8 @@ import { Public_Sans } from "next/font/google";
 
 import "@workspace/ui/globals.css";
 import { ConvexClientProvider } from "@/components/convex-client-provider";
+import { ClerkProvider } from "@clerk/nextjs";
+import { shadcn } from "@clerk/themes";
 
 const fontSans = Public_Sans({
   subsets: ["latin"],
@@ -16,7 +18,18 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <body className={`${fontSans.variable} font-sans antialiased `}>
-        <ConvexClientProvider>{children}</ConvexClientProvider>
+        <ClerkProvider
+          appearance={{
+            theme: shadcn,
+            elements: {
+              headerTitle: {
+                fontWeight: "700",
+              },
+            },
+          }}
+        >
+          <ConvexClientProvider>{children}</ConvexClientProvider>
+        </ClerkProvider>
       </body>
     </html>
   );
