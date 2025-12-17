@@ -1,9 +1,9 @@
 import { Public_Sans } from "next/font/google";
 
-import "@workspace/ui/globals.css";
 import { ConvexClientProvider } from "@/components/convex-client-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import { shadcn } from "@clerk/themes";
+import "@workspace/ui/globals.css";
 
 const fontSans = Public_Sans({
   subsets: ["latin"],
