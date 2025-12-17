@@ -4,4 +4,9 @@ packages:
 
 onlyBuiltDependencies:
   - '@clerk/shared'
+  - '@sentry/cli'
+  - '@tailwindcss/oxide'
+  - core-js-pure
   - esbuild
+  - msw
+  - sharp

@@ -127,3 +127,9 @@
     @apply bg-background text-foreground;
   }
 }
+
+/* Sentry Feedback widget/button styles */
+#sentry-feedback {
+  --accent-background: var(--primary);
+  --font-size: 14px;
+}
