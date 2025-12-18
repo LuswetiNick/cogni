@@ -14,6 +14,7 @@ import {
   SidebarMenuItem,
   SidebarRail,
 } from "@workspace/ui/components/sidebar";
+import { cn } from "@workspace/ui/lib/utils";
 import {
   AudioLines,
   Cable,
@@ -72,7 +73,7 @@ export function DashboardSidebar({
     }
     return pathname.startsWith(url);
   };
-  // userButtonTrigger:"w-full! p-2! hover:bg-sidebar-accent! hover:text-sidebar-accent-foreground! group-data-[collapsible=icon]:size-8! group-data-[collapsible=icon]:p-2!",
+
   return (
     <Sidebar className="group" collapsible="icon" {...props}>
       <SidebarHeader>
@@ -112,6 +113,10 @@ export function DashboardSidebar({
                     <SidebarMenuButton
                       isActive={isActive(item.url)}
                       tooltip={item.title}
+                      className={cn(
+                        isActive(item.url) &&
+                          "bg-linear-to-b from-chart-1 to to-sidebar-accent text-sidebar-primary-foreground! hover:bg-sidebar-primary/90"
+                      )}
                     >
                       <Link
                         href={item.url}
@@ -137,6 +142,10 @@ export function DashboardSidebar({
                     <SidebarMenuButton
                       isActive={isActive(item.url)}
                       tooltip={item.title}
+                      className={cn(
+                        isActive(item.url) &&
+                          "bg-linear-to-b from-chart-1 to to-sidebar-accent text-sidebar-primary-foreground! hover:bg-sidebar-primary/90"
+                      )}
                     >
                       <Link
                         href={item.url}
@@ -162,6 +171,10 @@ export function DashboardSidebar({
                     <SidebarMenuButton
                       isActive={isActive(item.url)}
                       tooltip={item.title}
+                      className={cn(
+                        isActive(item.url) &&
+                          "bg-linear-to-b from-chart-1 to to-sidebar-accent text-sidebar-primary-foreground! hover:bg-sidebar-primary/90"
+                      )}
                     >
                       <Link
                         href={item.url}
