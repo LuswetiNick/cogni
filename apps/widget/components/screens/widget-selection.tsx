@@ -15,6 +15,7 @@ import { useAtomValue, useSetAtom } from "jotai";
 import { ArrowRight, MessageSquareText } from "lucide-react";
 import { useState } from "react";
 import { WidgetHeader } from "../widget-header";
+import { WidgetFooter } from "../widget-footer";
 
 export const WidgetSelectionScreen = () => {
   const [isPending, setIsPending] = useState(false);
@@ -81,6 +82,7 @@ export const WidgetSelectionScreen = () => {
           <ArrowRight className="size-5" />
         </Button>
       </div>
+      <WidgetFooter />
     </>
   );
 };
