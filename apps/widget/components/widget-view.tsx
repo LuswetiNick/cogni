@@ -7,6 +7,7 @@ import { WidgetErrorScreen } from "./screens/widget-error";
 import { WidgetLoadingScreen } from "./screens/widget-loading";
 import { WidgetSelectionScreen } from "./screens/widget-selection";
 import { WidgetChatScreen } from "./screens/widget-chat";
+import { WidgetInboxScreen } from "./screens/widget-inbox";
 
 interface WidgetViewProps {
   organizationId: string | null;
@@ -19,7 +20,7 @@ export const WidgetView = ({ organizationId }: WidgetViewProps) => {
     loading: <WidgetLoadingScreen organizationId={organizationId} />,
     auth: <WidgetAuthScreen />,
     voice: <div>Voice</div>,
-    inbox: <div>Inbox</div>,
+    inbox: <WidgetInboxScreen />,
     selection: <WidgetSelectionScreen />,
     chat: <WidgetChatScreen />,
     contact: <div>Contact</div>,
