@@ -56,3 +56,5 @@ export const sidebardata = {
     },
   ],
 };
+
+export const STATUS_FILTER_KEY = "cogni-status-filter";

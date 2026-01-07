@@ -25,16 +25,16 @@ export const useInfiniteScroll = ({
     if (!(topElement && observerEnabled)) {
       return;
     }
-    const observre = new IntersectionObserver(
+    const observer = new IntersectionObserver(
       ([entry]) => {
         if (entry?.isIntersecting) {
           handleLoadMore();
         }
       },
-      { threshold: 0.1 },
+      { threshold: 0.1 }
     );
-    observre.observe(topElement);
-    return () => observre.disconnect();
+    observer.observe(topElement);
+    return () => observer.disconnect();
   }, [handleLoadMore, observerEnabled]);
 
   return {
