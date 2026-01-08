@@ -4,9 +4,8 @@ import { getCountryFlagUrl, getCountryFromTimezone } from "@/lib/country-utils";
 import { api } from "@workspace/backend/_generated/api";
 import { ConversationStatusBadge } from "@workspace/ui/components/conversation-status-badge";
 import DicebearAvatar from "@workspace/ui/components/dicebear-avatar";
-import { ScrollArea } from "@workspace/ui/components/scroll-area";
-import { useInfiniteScroll } from "@workspace/ui/hooks/use-infinite-scroll";
 import { InfiniteScrollTrigger } from "@workspace/ui/components/infinite-scroll-trigger";
+import { ScrollArea } from "@workspace/ui/components/scroll-area";
 import {
   Select,
   SelectContent,
@@ -14,6 +13,8 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@workspace/ui/components/select";
+import { Skeleton } from "@workspace/ui/components/skeleton";
+import { useInfiniteScroll } from "@workspace/ui/hooks/use-infinite-scroll";
 import { cn } from "@workspace/ui/lib/utils";
 import { usePaginatedQuery } from "convex/react";
 import { formatDistanceToNow } from "date-fns";
@@ -24,11 +25,9 @@ import {
   Check,
   CornerUpLeft,
   ListIcon,
-  Loader,
 } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { Skeleton } from "@workspace/ui/components/skeleton";
 
 const ConversationsPanel = () => {
   const statusFilter = useAtomValue(statusFilterAtom);
@@ -59,7 +58,6 @@ const ConversationsPanel = () => {
     <div className="flex flex-col h-full w-full bg-background text-sidebar-foreground gap-y-2">
       <div className="flex flex-col gap-4 border-b p-2">
         <Select
-          defaultValue="all"
           onValueChange={(value) =>
             setStatusFilter(
               value as "all" | "unresolved" | "escalated" | "resolved"
@@ -68,7 +66,21 @@ const ConversationsPanel = () => {
           value={statusFilter}
         >
           <SelectTrigger className="h-8 px-1.5 ring-0 hover:bg-accent hover:text-accent-foreground focus-visible:ring-0">
-            <SelectValue placeholder="Filter" />
+            <SelectValue>
+              {(value: string | null) => {
+                switch (value) {
+                  case "unresolved":
+                    return "Unresolved";
+                  case "escalated":
+                    return "Escalated";
+                  case "resolved":
+                    return "Resolved";
+                  case "all":
+                  default:
+                    return "All";
+                }
+              }}
+            </SelectValue>
           </SelectTrigger>
           <SelectContent className="p-1">
             <SelectItem value="all">
@@ -144,7 +156,9 @@ const ConversationsPanel = () => {
                         {conversation.contactSession.name}
                       </span>
                       <span className="ml-auto shrink-0 text-muted-foreground text-xs">
-                        {formatDistanceToNow(conversation._creationTime)}
+                        {formatDistanceToNow(conversation._creationTime, {
+                          addSuffix: true,
+                        })}
                       </span>
                     </div>
                     <div className="mt-1 flex items-center justify-between gap-2">
@@ -158,7 +172,7 @@ const ConversationsPanel = () => {
                             !isLastMessageFromOperator && "font-bold"
                           )}
                         >
-                          {conversation.lastMessage?.text}
+                          {conversation.lastMessage?.text || "No message"}
                         </span>
                       </div>
                       <ConversationStatusBadge status={conversation.status} />
