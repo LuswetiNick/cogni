@@ -115,7 +115,7 @@ export function DashboardSidebar({
                       tooltip={item.title}
                       className={cn(
                         isActive(item.url) &&
-                          "bg-linear-to-b from-chart-1 to to-sidebar-accent text-sidebar-primary-foreground! hover:bg-sidebar-primary/90"
+                          "bg-linear-to-b from-primary to-primary/90 text-muted-foreground! hover:bg-sidebar-primary/90"
                       )}
                     >
                       <Link

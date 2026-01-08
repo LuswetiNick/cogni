@@ -28,8 +28,9 @@ const DicebearAvatar = ({
       seed: seed.toLowerCase().trim(),
       size,
     });
+    const svgDataUri = avatar.toDataUri();
 
-    return avatar.toString();
+    return svgDataUri;
   }, [seed, size, imageURL]);
 
   const badgeSize = Math.round(size * 0.5);

@@ -1,3 +1,3 @@
 export default function ConversationsPage() {
-  return <div>Conversations Page</div>;
+  return <div className="p-4">Conversations Page</div>;
 }
