@@ -4,7 +4,6 @@ import { ConvexClientProvider } from "@/components/convex-client-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import { shadcn } from "@clerk/themes";
 import "@workspace/ui/globals.css";
-
 const fontSans = Nunito_Sans({
   subsets: ["latin"],
   variable: "--font-sans",

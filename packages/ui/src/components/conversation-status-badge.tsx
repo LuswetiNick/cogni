@@ -1,6 +1,6 @@
-import { ArrowRight, ArrowUp, CircleCheck } from "lucide-react";
-import { cn } from "@workspace/ui/lib/utils";
 import { Badge } from "@workspace/ui/components/badge";
+import { cn } from "@workspace/ui/lib/utils";
+import { ArrowRight, ArrowUp, Check } from "lucide-react";
 
 interface ConversationStatusBadgeProps {
   status: "unresolved" | "escalated" | "resolved";
@@ -9,7 +9,7 @@ interface ConversationStatusBadgeProps {
 
 const statusConfig = {
   resolved: {
-    icon: CircleCheck,
+    icon: Check,
     bgColor: "bg-[#3FB62F]",
   },
   unresolved: {

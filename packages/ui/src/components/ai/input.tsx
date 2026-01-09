@@ -163,7 +163,7 @@ export const AIInputTools = ({ className, ...props }: AIInputToolsProps) => (
 export type AIInputButtonProps = ComponentProps<typeof Button>;
 
 export const AIInputButton = ({
-  variant = "ghost",
+  variant = "outline",
   className,
   size,
   ...props
@@ -174,8 +174,8 @@ export const AIInputButton = ({
   return (
     <Button
       className={cn(
-        "shrink-0 gap-1.5 rounded-lg",
-        variant === "ghost" && "text-muted-foreground",
+        "shrink-0 gap-1.5 rounded-md",
+        variant === "outline" && "text-muted-foreground",
         newSize === "default" && "px-3",
         className
       )}

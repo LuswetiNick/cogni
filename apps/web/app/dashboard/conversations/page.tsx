@@ -1,3 +1,5 @@
+import ConversationsView from "./_components/conversations-view";
+
 export default function ConversationsPage() {
-  return <div className="p-4">Conversations Page</div>;
+  return <ConversationsView />;
 }
