@@ -65,7 +65,7 @@ const ConversationsPanel = () => {
           }
           value={statusFilter}
         >
-          <SelectTrigger className="h-8 px-1.5 ring-0 hover:bg-accent hover:text-accent-foreground focus-visible:ring-0">
+          <SelectTrigger className="h-8 px-1.5 ring-0 hover:bg-accent hover:text-accent-foreground focus-visible:ring-0 w-full">
             <SelectValue>
               {(value: string | null) => {
                 switch (value) {
@@ -130,10 +130,7 @@ const ConversationsPanel = () => {
                   href={`/dashboard/conversations/${conversation._id}`}
                   key={conversation._id}
                   className={cn(
-                    "relative flex cursor-pointer items-start gap-3 border-b p-4 text-sm leading-tight hover:bg-accent hover:text-accent-foreground",
-                    pathname ===
-                      `/dashboard/conversations/${conversation._id}` &&
-                      "bg-accent text-accent-foreground"
+                    "relative flex cursor-pointer items-start gap-3 border-b p-4 text-sm leading-tight hover:bg-accent hover:text-accent-foreground"
                   )}
                 >
                   <div

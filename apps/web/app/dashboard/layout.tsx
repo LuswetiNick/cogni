@@ -7,6 +7,7 @@ import {
 } from "@workspace/ui/components/sidebar";
 import { cookies } from "next/headers";
 import { DashboardSidebar } from "./_components/dashboard-sidebar";
+import { Provider } from "jotai";
 
 export default async function DashboardLayout({
   children,
@@ -16,12 +17,14 @@ export default async function DashboardLayout({
   return (
     <AuthGuard loadingMessage="Loading your dashboard...">
       <OrganizationGuard>
-        <SidebarProvider defaultOpen={defaultOpen}>
-          <DashboardSidebar />
-          <SidebarInset>
-            <main className="flex flex-1 flex-col gap-4">{children}</main>
-          </SidebarInset>
-        </SidebarProvider>
+        <Provider>
+          <SidebarProvider defaultOpen={defaultOpen}>
+            <DashboardSidebar />
+            <SidebarInset>
+              <main className="flex flex-1 flex-col gap-4">{children}</main>
+            </SidebarInset>
+          </SidebarProvider>
+        </Provider>
       </OrganizationGuard>
     </AuthGuard>
   );

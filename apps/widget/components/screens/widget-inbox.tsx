@@ -46,7 +46,7 @@ export const WidgetInboxScreen = () => {
             onClick={() => setScreen("selection")}
           >
             <MoveLeft />
-            back to inbox
+            back
           </Button>
         </div>
       </WidgetHeader>
@@ -66,7 +66,9 @@ export const WidgetInboxScreen = () => {
                 <div className="flex items-center w-full justify-between gap-x-2">
                   <p className="text-sm text-muted-foreground">Chat</p>
                   <p className="text-sm text-muted-foreground">
-                    {formatDistanceToNow(new Date(conversation._creationTime))}
+                    {formatDistanceToNow(new Date(conversation._creationTime), {
+                      addSuffix: true,
+                    })}
                   </p>
                 </div>
                 <div className="flex w-full items-center justify-between gap-x-2">
