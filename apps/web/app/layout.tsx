@@ -1,11 +1,12 @@
-import { Nunito_Sans } from "next/font/google";
+import { Work_Sans } from "next/font/google";
 
 import { ConvexClientProvider } from "@/components/convex-client-provider";
 import { ClerkProvider } from "@clerk/nextjs";
 import { shadcn } from "@clerk/themes";
 import "@workspace/ui/globals.css";
-const fontSans = Nunito_Sans({
+const fontSans = Work_Sans({
   subsets: ["latin"],
+  weight: ["400", "700"],
   variable: "--font-sans",
 });
 
