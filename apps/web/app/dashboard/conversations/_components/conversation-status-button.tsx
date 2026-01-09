@@ -44,7 +44,12 @@ const ConversationStatusButton = ({
   }
   return (
     <Hint text="Mark as escalated">
-      <Button size="sm" onClick={onClick} variant="destructive">
+      <Button
+        size="sm"
+        onClick={onClick}
+        variant="destructive"
+        disabled={disabled}
+      >
         <ArrowRight />
         Unresolved
       </Button>
