@@ -20,8 +20,10 @@
     "@ai-sdk/google": "^2.0.51",
     "@clerk/backend": "^2.28.0",
     "@convex-dev/agent": "^0.3.2",
+    "@convex-dev/rag": "^0.6.1",
     "ai": "^5.0.116",
     "convex": "^1.31.1",
+    "convex-helpers": "^0.1.109",
     "zod": "3.25.76"
   }
 }
