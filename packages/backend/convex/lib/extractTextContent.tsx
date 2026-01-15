@@ -111,7 +111,6 @@ export async function extractTextContent(
   const { storageId, filename, mimeType, bytes } = args;
   const url = await ctx.storage.getUrl(storageId);
   assert(url, "Failed to get storage Url");
-  const a = url;
   if (SUPPORTED_IMAGE_TYPES.some((type) => type === mimeType)) {
     return extractTextContentFromImage(url);
   }
