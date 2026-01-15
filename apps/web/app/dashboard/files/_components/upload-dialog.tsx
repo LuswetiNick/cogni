@@ -38,7 +38,7 @@ const UploadDialog = ({
     category: "",
     filename: "",
   });
-  const hanldeFileDrop = (acceptedFiles: File[]) => {
+  const handleFileDrop = (acceptedFiles: File[]) => {
     const file = acceptedFiles[0];
     if (file) {
       setUploadedFiles([file]);
@@ -134,7 +134,7 @@ const UploadDialog = ({
             }}
             disabled={isUploading}
             maxFiles={1}
-            onDrop={hanldeFileDrop}
+            onDrop={handleFileDrop}
             src={uploadedFiles}
           >
             <DropzoneEmptyState />
