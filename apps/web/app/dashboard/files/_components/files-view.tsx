@@ -131,7 +131,7 @@ const FilesView = () => {
                         </Badge>
                       </TableCell>
                       <TableCell className="p-4">
-                        <div className="p-4 text-muted-foreground">
+                        <div className="text-muted-foreground">
                           <span>{file.size}</span>
                         </div>
                       </TableCell>

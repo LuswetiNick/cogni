@@ -6,6 +6,7 @@ import { action, mutation, query } from "../_generated/server";
 import { supportAgent } from "../system/ai/agents/supportAgent";
 import { generateText } from "ai";
 import { google } from "@ai-sdk/google";
+import { OPERATOR_MESSAGE_ENHANCEMENT_PROMPT } from "../system/ai/constants";
 
 export const enhanceResponse = action({
   args: {
@@ -31,8 +32,7 @@ export const enhanceResponse = action({
       messages: [
         {
           role: "system",
-          content:
-            "Enhance the operator's response to make it more professional and helpful while maintaining their intent, key information and context. ",
+          content: OPERATOR_MESSAGE_ENHANCEMENT_PROMPT,
         },
         {
           role: "user",
